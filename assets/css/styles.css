@@ -1,0 +1,56 @@
+/* renkleri değişken olarak tanımladım */
+:root {
+  --arkaPlan: #0f0f1a; /* koyu arka plan */
+  --yaziRenk: #ffffff;
+
+  --kutuLila: #6f63b6; /* soft lila */
+  --kutuMavi: #4a6fbf; /* soft mavi */
+
+  --pembeBorder: #ff6fa5; /* kenarlık için pembe */
+}
+
+/* genel sayfa ayarları */
+body {
+  background-color: var(--arkaPlan);
+  color: var(--yaziRenk);
+  font-family: Arial, sans-serif;
+  padding: 30px;
+}
+
+/* başlık */
+h1 {
+  margin-bottom: 25px;
+}
+
+/* hizmet alanı */
+.services {
+  width: 550px;
+}
+
+/* kutuların temel görünümü */
+.service {
+  background-color: var(--kutuLila);
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 2px solid var(--pembeBorder);
+  transition: 0.2s;
+}
+
+/* advanced selector 1
+   sadece çift olanları mavi yaptım */
+.services .service:nth-child(even) {
+  background-color: var(--kutuMavi);
+}
+
+/* advanced selector 2
+   data-type pro olanların kenarlığını biraz kalın yaptım */
+.service[data-type="pro"] {
+  border-width: 3px;
+}
+
+/* advanced selector 3
+   hover olunca biraz büyüsün */
+.service:hover {
+  transform: scale(1.02);
+}
